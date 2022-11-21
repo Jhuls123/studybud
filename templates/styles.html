@@ -1,0 +1,69 @@
+{%block style%}
+	<style>
+		*, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+        body {
+            max-height: 100vh;
+            max-width: 100vw;
+            background-image: url(images/juls.jpg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .nav-container {
+            display: flex;
+            height: 70px;
+            background-color: #333;
+        }
+        .container {
+            display: flex;
+            margin: auto;
+            width: 90%;
+        }
+        .logo-container {
+            flex: 1;
+            display: flex;
+            gap: 15px;
+        }
+        .logo-container a {
+            color: bisque;
+        }
+        .link-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 15px;
+        }
+
+        .user-container a{
+            margin-right: 50px;
+            color: bisque;
+        }
+        .link-container a{
+            color: bisque;
+
+        }
+        .user-link {
+            font-size: 20px;
+        }
+        .email-link {
+            color: #ccc;
+            font-size: 15px;
+        }
+        .username-input {
+            font-size:10px;
+            width:20%;
+            padding: 5px
+        }
+        .username-label {
+            font-size:15px;
+            font-weight: bold;
+        }
+	</style>
+{%endblock%}

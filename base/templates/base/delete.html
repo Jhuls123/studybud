@@ -1,0 +1,10 @@
+{%extends 'main.html'%}
+{% block title %}Delete Page{% endblock %}
+{% block content%}
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>Are you sure you want to delete "{{postDelete}}"?</p>
+    <a href="{% url 'home' %}" class="btn btn-success">Go back</a>
+    <input type="submit" value="confirm" class="btn btn-danger">
+</form>
+{% endblock %}

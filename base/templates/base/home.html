@@ -1,0 +1,27 @@
+{% extends 'main.html' %} {% block content %}
+<br />
+<a href="{% url 'add-post' %}" class="btn btn-success">Create post</a><br>
+{% if request.user.is_staff %}
+<a href="">hide if not staff</a>
+{% endif %}
+<hr>
+<strong>{{show_all.count}} Posts available</strong>
+<hr />
+<div>
+    <ul>
+	{% for post in show_all %}
+        <small>added: {{post.created|timesince}}</small> ago
+        <li>
+            Title Post: <a href="{% url 'detail' post.id %}">{{post.title}}</a>
+        </li>
+        <li>author: {{post.author|capfirst}}</li>
+        <li>Comment: {{post.body}}</li>
+        {% if request.user == post.author %}
+            <a href="{% url 'update-post' post.id %}" class="btn btn-success btn-sm">Edit</a>
+            <a href="{% url 'delete-post' post.id %}" class="btn btn-danger btn-sm">Delete</a>
+        {% endif %}
+        <hr />
+	{% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% block title %}
+    {{detail.author}} Profile
+{% endblock %}
+{% block content%}
+    <h1>Details</h1><br>
+    <div>
+        <strong>Title: {{detail.title}}</strong><br>
+        <small>By: {{detail.author}}</small><br>
+        <small>Created: {{detail.created|timesince}} ago</small><br>
+    </div>
+    <p>Comment: <br> {{detail.body}}</p>
+    <div>
+        <h3>Conversation</h3>
+    </div><br>
+    <br> <a href="{% url 'home' %}" class="btn btn-info">Back</a>
+{% endblock %}

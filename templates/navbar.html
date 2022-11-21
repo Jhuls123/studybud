@@ -1,0 +1,20 @@
+<nav class="nav-container">
+    <div class="container">
+        <div class="logo-container">
+            <h1><a href="{% url 'home' %}">Logo</a></h1>
+        </div>
+        <div class="link-container">
+            {% if request.user.is_authenticated %}
+                <div class="user-container">
+                    <a href="#">@{{user.first_name|capfirst}} {{user}}</a>
+                    <span class="email-link">{{user.email}}</span>
+                </div>
+                <a href="{% url 'logout-form' %}">Logout</a>
+            {% else %}
+            
+                <a href="{% url 'signin-form' %}">signin</a>
+                <a href="{% url 'signup-form' %}">signup</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
